@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardápio completo — Cuscuz Restaurante</title>
+  <meta name="description" content="Cardápio completo do Cuscuz Restaurante: burgers gourmet, especialidades da casa, petiscos, pratos executivos, marmitas, drinks, vinhos e bebidas.">
+  <meta name="theme-color" content="#0a0807">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cardapio.css">
+</head>
+<body class="is-ready page-menu">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 14.96l-.3-.19-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 3.9c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.5 2.5 1.08 3 .87 3.54.82.55-.05 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M9 10V7a3 3 0 0 1 6 0v3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M7 9V4h10v5M7 17H4v-8h16v8h-3M7 14h10v6H7v-6Z"/></symbol>
+</svg>
+
+<header class="header is-stuck" id="header">
+  <div class="container header__row">
+    <a href="index.html" class="logo" aria-label="Cuscuz Restaurante — página inicial">
+      <span class="logo__word">CUSCUZ</span>
+      <span class="logo__sub">Restaurante</span>
+    </a>
+    <div class="menu-actions">
+      <a class="btn btn--ghost" href="index.html"><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg>Voltar ao site</a>
+      <a class="btn btn--wa" href="https://api.whatsapp.com/send/?phone=556132037802&text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva%2Fpedido+no+Cuscuz+Restaurante%21&type=phone_number&app_absent=0" target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg><span class="hide-sm">Chamar no WhatsApp</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="menu-hero">
+    <div class="container">
+      <p class="kicker kicker--center">Cardápio 2026</p>
+      <h1 class="title title--center">Cardápio <em>completo</em></h1>
+      <p class="menu-hero__sub">Burgers, especialidades, petiscos, executivos, marmitas, drinks, vinhos e bebidas.</p>
+      <div class="menu-hero__btns">
+        <button class="btn btn--primary" id="printBtn" type="button"><svg><use href="#i-print"/></svg>Baixar / imprimir em PDF</button>
+        <a class="btn btn--ghost" href="https://www.ifood.com.br/delivery/brasilia-df/cuscuz-restaurante-lago-norte/9c527b13-2a59-40d7-9828-079d4b289e58?utm_medium=share" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Pedir pelo iFood</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="toolbar" id="toolbar">
+    <div class="container toolbar__row">
+      <label class="search"><span class="sr">Buscar no cardápio</span>
+        <input id="search" type="search" placeholder="Buscar prato, bebida ou código…" autocomplete="off">
+      </label>
+      <nav class="chips" id="chips" aria-label="Categorias do cardápio"></nav>
+    </div>
+  </div>
+
+  <div class="container menu-wrap">
+    <div id="menuRoot"></div>
+    <p class="menu-empty" id="empty" hidden>Nenhum item encontrado. Tente outra palavra.</p>
+    <p class="menu-foot">Valores sujeitos a alteração. Confira a taxa de entrega para a sua região. Delivery: (61) 3203-7802 · Drive Thru BR 020 / Taquari.<br>Se beber, não dirija. Previna a obesidade infantil com adoção de alimentação saudável e prática de atividades físicas. (Lei nº 5.501, de 16 de julho de 2015)</p>
+  </div>
+</main>
+
+<footer class="footer footer--slim">
+  <div class="footer__bottom" style="margin-top:0">
+    <div class="container">
+      <p>© 2026 - Cuscuz Cozinha de Bar e Restaurante - Todos os direitos reservados.</p>
+      <a href="index.html#contato" style="color:var(--yellow)">Como chegar</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/cardapio.js"></script>
+</body>
+</html>

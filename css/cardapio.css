@@ -1,0 +1,69 @@
+/* Página de cardápio completo */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.menu-actions{display:flex;gap:10px}
+.menu-hero{padding:calc(var(--header-h) + 70px) 0 50px;text-align:center;background:
+  radial-gradient(ellipse 60% 80% at 50% 0,rgba(106,58,28,.45),transparent 70%),var(--bg)}
+.menu-hero__sub{color:#cfc2b4;margin:18px auto 0;max-width:52ch}
+.menu-hero__btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.menu-hero .title{animation:rise 1s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+
+.toolbar{position:sticky;top:var(--header-h);z-index:50;background:rgba(10,8,7,.92);backdrop-filter:blur(14px);border-block:1px solid var(--line-soft);padding:12px 0}
+.toolbar__row{display:flex;gap:16px;align-items:center}
+.search{flex:0 0 min(300px,36%)}
+.search input{width:100%;padding:12px 18px;border-radius:999px;border:1px solid var(--line-soft);background:var(--surface);color:var(--text);font:inherit;font-size:.92rem}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:0;border-color:var(--yellow)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;padding:2px}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line-soft);font-size:.85rem;color:#d8cdc1;transition:all .3s var(--ease)}
+.chips a:hover,.chips a.is-on{background:var(--yellow);border-color:var(--yellow);color:#1a1008;font-weight:500}
+
+.menu-wrap{padding-block:40px 90px;max-width:960px}
+.ms{padding-top:56px;scroll-margin-top:calc(var(--header-h) + 70px)}
+.ms[hidden]{display:none}
+.ms__head{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:8px}
+.ms__head h2{font-family:var(--f-serif);font-weight:900;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--yellow);line-height:1.1}
+.ms__note{margin-top:8px;font-size:.85rem;color:var(--muted)}
+.ms__sub{font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin:30px 0 4px;font-weight:500}
+.ms__list{display:block}
+.mi{display:flex;align-items:baseline;gap:12px;padding:16px 4px;border-bottom:1px solid var(--line-soft);transition:background .3s,padding .3s var(--ease)}
+.mi[hidden]{display:none}
+.mi:hover{background:rgba(247,197,30,.04);padding-inline:12px}
+.mi__main{flex:0 1 auto;max-width:72%}
+.mi h3{display:inline;font-size:1.04rem;font-weight:600}
+.mi__code{display:inline-block;min-width:2.2em;margin-right:8px;font-size:.72rem;color:var(--yellow);letter-spacing:.06em;font-weight:500}
+.mi p{color:var(--muted);font-size:.84rem;line-height:1.5;margin-top:4px}
+.mi__dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.2);transform:translateY(-4px);min-width:16px}
+.mi__price{display:flex;gap:6px;white-space:nowrap;font-weight:600;color:var(--text);font-size:1.02rem}
+.mi__p small{font-size:.66rem;color:var(--muted);font-weight:400}
+.mi__sep{color:var(--muted);font-weight:300}
+.menu-empty{text-align:center;color:var(--muted);padding:60px 0}
+.menu-foot{margin-top:60px;padding-top:24px;border-top:1px solid var(--line-soft);font-size:.8rem;color:var(--muted);line-height:1.7;text-align:center}
+.footer--slim{padding-top:0}
+
+@media (max-width:720px){
+  .toolbar__row{flex-direction:column;align-items:stretch;gap:10px}
+  .search{flex:none}
+  .hide-sm{display:none}
+  .menu-actions .btn{padding:10px 16px}
+  .mi{flex-wrap:wrap}
+  .mi__main{max-width:calc(100% - 100px)}
+  .mi__dots{display:none}
+  .mi__price{margin-left:auto}
+}
+
+/* Impressão / salvar em PDF */
+@media print{
+  :root{--bg:#fff;--text:#111;--muted:#555;--yellow:#7a4a00;--line:#ccc;--line-soft:#ddd}
+  body{background:#fff;color:#111;font-size:11pt}
+  .header,.toolbar,.menu-hero__btns,.footer,.menu-empty{display:none!important}
+  .menu-hero{padding:0 0 10px;background:none}
+  .menu-hero .title{font-size:24pt;color:#111}
+  .menu-hero__sub{display:none}
+  .ms{padding-top:22px;break-inside:auto}
+  .mi{break-inside:avoid;padding:7px 0}
+  .ms__head{break-after:avoid}
+  .mi:hover{background:none;padding-inline:0}
+  .mi__price{color:#111}
+}
